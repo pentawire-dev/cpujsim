@@ -1,0 +1,57 @@
+<table border="0" cellspacing="0" cellpadding="4" style="border-collapse:collapse;">
+
+<tr><td style="font-family: Consolas, 'Courier New', monospace; white-space: pre; font-size:11px; background-color:#ffffff;"><pre>
+<b>Instruction set:</b>
+${parent.cpu.instructionsInfos()}
+</pre></td></tr>
+
+<tr><td style="font-family: Consolas, 'Courier New', monospace; white-space: pre; font-size:11px; background-color:#eeeeee;"><pre>
+<b>Video info:</b>
+ Video RAM from <b>#${parent.screen.base_address}</b> to <b>#${parent.screen.base_address + parent.screen.size - 1}</b>
+ Video control address <b>#${parent.screen.color_address}</b>
+
+ Video control address bits:
+<b>
+  7  6  543  210
+ [U][M][FGC][BGC]
+</b>
+ - Bit  7:   [U] Unused
+ - Bit  6:   [M] Video Mode
+                 M = 0 Gfx mode  (16x12 pixels)
+                 M = 1 Text mode (8x3 characters, use ascii code)
+                       bit 7 = 1 for a character to print it reversed
+ - Bits 543: [FGC] Foreground pixel/character color
+ - Bits 210: [BGC] Screen background color
+ Colors:</pre>
+ <img src="colors.png">
+</td></tr>
+
+<tr><td style="font-family: Consolas, 'Courier New', monospace; white-space: pre; font-size:11px; background-color:#ffffff;"><pre>
+<b>Keyboard info:</b>
+ Keyboard buffer address <b>#${parent.keyboard.keyboard_buffer_address}</b> (use ascii code)
+</td></tr>
+
+<tr><td style="font-family: Consolas, 'Courier New', monospace; white-space: pre; font-size:11px; background-color:#eeeeee;"><pre>
+<b>Audio info:</b>
+ Audio buffer address <b>#${parent.speaker.sound_buffer_address}</b>
+ 
+ Audio control address bits:
+<b>
+  7  65  4  3210
+ [L][SP][H][TONE]
+</b>
+ - Bit  7:    [L]    Loop sound
+ - Bit  56:   [SP]   Sound speed
+ - Bits 4:    [H]    H = 0 Use low octave
+                     H = 1 Use high octave
+ - Bits 3210: [TONE] Tones
+ Tones:
+<b>
+  0  None
+  1  C     2  C#    3  D
+  4  D#    5  E     6  F
+  7  F#    8  G     9  G#
+  10 A     11 A#    12 B
+</b></pre></td></tr>
+
+</table>
