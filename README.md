@@ -9,3 +9,5 @@ CPUj Sim:<br/>
 https://pentawire.altervista.org<br/>
 https://www.youtube.com/@penta_video<br/>
 https://github.com/pentawire-dev/cpujsim<br/>
+
+Thanks for the icons to Everaldo Coelho: https://commons.wikimedia.org/wiki/Crystal_Clear<br/>
